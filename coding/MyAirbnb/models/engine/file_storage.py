@@ -30,7 +30,7 @@ class FileStorage:
     def reload(self):
         """ deserializes the JSON file to __objects """
         try:
-            with open(self.__file_path, 'r', encoding="UTF8") as f:
+            with open(self.__file_path, 'r', encoding="utf-8") as f:
                 # jlo = json.load(f)
                 for key, value in json.load(f).items():
                     attri_value = eval(value["__class__"])(**value)
